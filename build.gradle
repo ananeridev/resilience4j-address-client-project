@@ -1,0 +1,44 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.anabneri.microsservices'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	resilience4jVersion = '0.17.0'
+}
+
+dependencies {
+	implementation "io.github.resilience4j:resilience4j-spring-boot2:${resilience4jVersion}"
+	implementation('org.springframework.boot:spring-boot-starter-actuator')
+	implementation('org.springframework.boot:spring-boot-starter-aop')
+
+//	//aplication monitoring
+//
+//	implementation group: 'io.micrometer', name: 'micrometer-registry-prometheus', version: '1.2.1'
+
+
+	//core lib
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+
+	//swagger
+	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
