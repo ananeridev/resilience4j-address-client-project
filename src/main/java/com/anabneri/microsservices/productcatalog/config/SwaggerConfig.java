@@ -19,7 +19,7 @@ public class SwaggerConfig {
     @Bean
     public Docket swagConfig(){
         return new Docket(DocumentationType.SWAGGER_2).select()
-            .apis(RequestHandlerSelectors.basePackage("com.gl"))
+            .apis(RequestHandlerSelectors.basePackage("com.anabneri.microsservices.productcatalog.controller"))
             .build()
             .apiInfo(getApiInfo());
     }

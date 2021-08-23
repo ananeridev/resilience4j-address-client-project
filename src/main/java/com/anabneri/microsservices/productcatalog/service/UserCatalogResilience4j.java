@@ -5,23 +5,22 @@ import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
+@RequiredArgsConstructor
 public class UserCatalogResilience4j {
 
     Logger logger = LoggerFactory.getLogger(UserCatalogResilience4j.class);
-    private RestTemplate restTemplate;
 
-    public UserCatalogResilience4j(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
-
+    private final RestTemplate restTemplate;
 
     @CircuitBreaker(name = "service1", fallbackMethod = "fallbackForRegisterSeller")
     @RateLimiter(name = "service1", fallbackMethod = "rateLimiterfallback")

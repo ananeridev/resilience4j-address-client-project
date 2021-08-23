@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.anabneri.microsservices'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '11'
 
 configurations {
 	compileOnly {
@@ -15,30 +15,33 @@ configurations {
 }
 
 repositories {
+	mavenLocal()
 	mavenCentral()
 }
 
-ext {
-	resilience4jVersion = '0.17.0'
-}
-
 dependencies {
-	implementation "io.github.resilience4j:resilience4j-spring-boot2:${resilience4jVersion}"
 	implementation('org.springframework.boot:spring-boot-starter-actuator')
 	implementation('org.springframework.boot:spring-boot-starter-aop')
-
-//	//aplication monitoring
-//
-//	implementation group: 'io.micrometer', name: 'micrometer-registry-prometheus', version: '1.2.1'
-
+	implementation 'io.github.resilience4j:resilience4j-spring-boot2:1.7.1'
+	implementation 'io.github.resilience4j:resilience4j-circuitbreaker:1.7.1'
 
 	//core lib
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-
+	implementation('org.springframework.boot:spring-boot-starter-web');
 
 	//swagger
 	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
 
+	// Lombok
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR8"
+	}
 }

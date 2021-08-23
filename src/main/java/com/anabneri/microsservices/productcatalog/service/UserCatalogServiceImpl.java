@@ -1,6 +1,7 @@
 package com.anabneri.microsservices.productcatalog.service;
 
 import com.anabneri.microsservices.productcatalog.model.SellerProductDto;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -8,15 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class UserCatalogServiceImpl implements UserCatalogService{
 
     Logger logger = LoggerFactory.getLogger(UserCatalogServiceImpl.class);
-    private UserCatalogResilience4j userCatalogResilience4j;
 
-
-    public UserCatalogServiceImpl(UserCatalogResilience4j userCatalogResilience4j) {
-        this.userCatalogResilience4j = userCatalogResilience4j;
-    }
+    private final UserCatalogResilience4j userCatalogResilience4j;
 
     public String catalogSeller(SellerProductDto sellerDto) {
 
