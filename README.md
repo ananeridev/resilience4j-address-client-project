@@ -4,7 +4,7 @@ Service of catalogs products
 
 Project to test the Resilience4J as a circuit breaker.
 
-TODO List:
+### TODO List:
 
 - [ ] Mudar parametros do model para receber o CEP e os parametros do viacep
 
