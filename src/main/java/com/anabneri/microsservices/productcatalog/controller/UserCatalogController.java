@@ -18,7 +18,6 @@ public class UserCatalogController {
 
     @PostMapping("/register/seller")
     public String registerAsSeller(@RequestBody SellerProductDto sellerDto) {
-        // registration of an seller
         return userCatalogService.userCatalogSeller(sellerDto);
     }
 

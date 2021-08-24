@@ -4,7 +4,7 @@ public class Item {
     private long id;
     private String name;
     private String category;
-    private double price;//per item
+    private double price;
 
     public long getId() {
         return id;

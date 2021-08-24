@@ -7,14 +7,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriTemplateHandler;
 
-/*
-*
-* */
-
 @Configuration
 public class OrderConfig {
 
-    private static final String baseUrl = "http://localhost:8086/products";
+    private static final String baseUrl = "viacep.com.br/ws/01001000/json/";
 
     @Bean
     RestTemplate restTemplate(RestTemplateBuilder builder) {
