@@ -1,4 +1,4 @@
-package com.anabneri.microsservices.productcatalog.service;
+package com.anabneri.microsservices.address.service;
 
 public class ExceptionHandler extends Exception{
     public ExceptionHandler(String msg) {

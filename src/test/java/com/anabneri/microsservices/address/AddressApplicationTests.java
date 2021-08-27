@@ -1,10 +1,10 @@
-package com.anabneri.microsservices.productcatalog;
+package com.anabneri.microsservices.address;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProductCatalogApplicationTests {
+class AddressApplicationTests {
 
 	@Test
 	void contextLoads() {

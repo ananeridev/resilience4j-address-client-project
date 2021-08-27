@@ -1,4 +1,4 @@
-package com.anabneri.microsservices.productcatalog.config;
+package com.anabneri.microsservices.address.config;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.client.RootUriTemplateHandler;
@@ -12,9 +12,9 @@ import org.springframework.web.util.UriTemplateHandler;
 * */
 
 @Configuration
-public class OrderConfig {
+public class RestTemplateConfig {
 
-    private static final String baseUrl = "http://localhost:8086/products";
+    private static final String baseUrl = "https://viacep.com.br";
 
     @Bean
     RestTemplate restTemplate(RestTemplateBuilder builder) {

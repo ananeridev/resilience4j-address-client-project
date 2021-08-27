@@ -1,4 +1,4 @@
-package com.anabneri.microsservices.productcatalog.config;
+package com.anabneri.microsservices.address.config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -19,7 +19,7 @@ public class SwaggerConfig {
     @Bean
     public Docket swagConfig(){
         return new Docket(DocumentationType.SWAGGER_2).select()
-            .apis(RequestHandlerSelectors.basePackage("com.anabneri.microsservices.productcatalog.controller"))
+            .apis(RequestHandlerSelectors.basePackage("com.anabneri.microsservices.address.controller"))
             .build()
             .apiInfo(getApiInfo());
     }
