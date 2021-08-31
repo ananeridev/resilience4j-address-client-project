@@ -1,6 +1,6 @@
 # Resilience4J 
 
-Service of search zipCodes
+Service of search zipCodes using a public API
 
 Project to test the Resilience4J as a circuit breaker.
 
