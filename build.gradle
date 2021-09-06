@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.5.2'
+	id 'org.springframework.boot' version '2.2.6.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
@@ -24,6 +24,10 @@ dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-aop')
 	implementation 'io.github.resilience4j:resilience4j-spring-boot2:1.7.1'
 	implementation 'io.github.resilience4j:resilience4j-circuitbreaker:1.7.1'
+
+	implementation 'io.github.openfeign:feign-jackson:9.7.0'
+	implementation 'io.github.openfeign:feign-httpclient:11.5'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 
 	//core lib
 	implementation('org.springframework.boot:spring-boot-starter-web');
