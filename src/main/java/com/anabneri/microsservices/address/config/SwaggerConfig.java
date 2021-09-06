@@ -26,10 +26,10 @@ public class SwaggerConfig {
 
     private ApiInfo getApiInfo() {
         return new ApiInfo("Order management application",
-            "Documentation for Order management application",
+            "Acessing VIACEP API",
             "1.0",
             "Terms of service for using Order management application",
-            new Contact("Green Learner","https://www.youtube.com/channel/UCaH2MTg94hrJZTolW01a3ZA","greenlearner01@gmail.com"),
+            new Contact("ana and pati","https://www.linkedin.com/in/anabeatrizdev/","teste@teste.com"),
             "MIT Licence",
             "https://opensource.org/licenses/MIT",
             new ArrayList<>()
